@@ -1,0 +1,80 @@
+body {
+  line-height: normal;
+}
+
+.pyg_view {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pyg_view .left {
+  width: .9rem;
+  font-size: .15rem;
+  overflow: hidden;
+}
+
+.pyg_view .left ul li {
+  height: .4rem;
+  line-height: .4rem;
+  text-align: center;
+  background-color: #cc1144;
+  color: #fff;
+}
+
+.pyg_view .left ul .active {
+  background-color: #f5cfda;
+  color: #000;
+  border-left: .05rem solid #0094ff;
+}
+
+.pyg_view .right {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  overflow: hidden;
+  font-size: .14rem;
+  background-color: #fff;
+}
+
+.pyg_view .right .item_group .cat_name {
+  padding: .1rem;
+  color: #0094ff;
+}
+
+.pyg_view .right .item_group .cat_name .c_tit {
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+.pyg_view .right .item_group .cat_name .c_line {
+  float: left;
+  width: 79%;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(47%, #fff), color-stop(50%, #000), color-stop(51%, #fff));
+  background-image: linear-gradient(#fff 47%, #000 50%, #fff 51%);
+  color: transparent;
+}
+
+.pyg_view .right .item_group .item_contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  color: #000;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.pyg_view .right .item_group .item_contents a {
+  padding: .05rem 0;
+  text-align: center;
+  width: 33.33%;
+}
+
+.pyg_view .right .item_group .item_contents a img {
+  width: 70%;
+  margin: 0 auto;
+}

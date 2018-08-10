@@ -1,0 +1,51 @@
+ /* 主体 */
+.pyg_view {
+    height: 100%;
+    overflow: scroll;
+} 
+/* 首页导航 */
+.index_nav {
+    display: flex;
+   a {
+     flex: 1;
+     padding: 15px;
+   }
+}  
+/* 商品列表 */
+.index_goodslist {
+   padding: 0 10px;
+   .big_banner {
+       margin-bottom: 5px;
+   } 
+   .gg_content {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-around;
+       li {
+          width: 48%;
+          background-color: #fff;
+          margin-bottom: 5px;
+          padding: 0 10px;
+          .item_des{
+            .goods_name {
+                font-size: 14px;
+                color: #000;
+                height: 44px;
+                overflow: hidden;
+              }
+            .goods_price {
+                color: #f00;
+                font-size: 16px;
+            }
+
+          } 
+          .item_like {
+              a {
+                  display: block;
+                  width: 80%;
+                  margin: 5px auto;
+              }
+          } 
+       }
+   }
+}

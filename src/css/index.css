@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/* 主体 */
+.pyg_view {
+  height: 100%;
+  overflow: scroll;
+}
+
+/* 首页导航 */
+.index_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.index_nav a {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 15px;
+}
+
+/* 商品列表 */
+.index_goodslist {
+  padding: 0 10px;
+}
+
+.index_goodslist .big_banner {
+  margin-bottom: 5px;
+}
+
+.index_goodslist .gg_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.index_goodslist .gg_content li {
+  width: 48%;
+  background-color: #fff;
+  margin-bottom: 5px;
+  padding: 0 10px;
+}
+
+.index_goodslist .gg_content li .item_des .goods_name {
+  font-size: 14px;
+  color: #000;
+  height: 44px;
+  overflow: hidden;
+}
+
+.index_goodslist .gg_content li .item_des .goods_price {
+  color: #f00;
+  font-size: 16px;
+}
+
+.index_goodslist .gg_content li .item_like a {
+  display: block;
+  width: 80%;
+  margin: 5px auto;
+}
