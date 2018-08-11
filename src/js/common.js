@@ -16,7 +16,7 @@ $(function () {
       obj.url = BaseUrl +"api/public/v1/"+ obj.url;
       // console.log(obj.url);
       ajaxNum++;
-      console.log(ajaxNum);
+      // console.log(ajaxNum);
       $('body').addClass("wait");
 
     }
@@ -24,7 +24,7 @@ $(function () {
   $.ajaxSettings.complete = function() {
       ajaxNum--;
       if(ajaxNum == 0){
-        console.log("最后的ajaxNum="+ajaxNum);
+        // console.log("最后的ajaxNum="+ajaxNum);
       } $('body').removeClass('wait');   
   }
 

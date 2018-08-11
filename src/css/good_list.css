@@ -9,20 +9,22 @@ body {
   width: 100%;
   height: 45px;
   background-color: yellow;
+  z-index: 2;
 }
 
 .pyg_bar {
-  position: absolute;
+  position: fixed;
   top: 45px;
   left: 0;
   width: 100%;
   height: 45px;
+  line-height: 45px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   background-color: #f7f7f7;
   text-align: center;
-  line-height: 45px;
+  z-index: 2;
 }
 
 .pyg_bar a {
@@ -35,5 +37,59 @@ body {
 
 .pyg_view {
   height: 100%;
-  overflow: scroll;
+  position: relative;
+}
+
+.pyg_view ul li {
+  margin: 5px;
+  background-color: #fff;
+}
+
+.pyg_view ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pyg_view ul li a .item_left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.pyg_view ul li a .item_left img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.pyg_view ul li a .item_right {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  overflow: hidden;
+  position: relative;
+  padding-left: 10px;
+}
+
+.pyg_view ul li a .item_right .fa {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #ccc;
+  font-size: 22px;
+}
+
+.pyg_view ul li a .item_right .goods_name {
+  font-size: 15px;
+  height: 40px;
+  line-height: 35px;
+  color: #99999e;
+}
+
+.pyg_view ul li a .item_right .goods_price {
+  font-size: 15px;
+  color: #f00;
+  padding-top: 10px;
 }

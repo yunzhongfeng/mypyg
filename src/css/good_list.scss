@@ -9,18 +9,20 @@ body {
     width: 100%;
     height: 45px;
     background-color: yellow;
+    z-index: 2;
 }
 //商品检索部分
 .pyg_bar {
-    position: absolute;
+    position: fixed;
     top: 45px;
     left: 0;
     width: 100%;
     height: 45px;
+    line-height: 45px;
     display: flex;
     background-color: #f7f7f7;
     text-align: center;
-    line-height: 45px;
+    z-index: 2;
     a {
         color: #4f7aff;
         flex: 1;
@@ -31,5 +33,49 @@ body {
 //主体部分
 .pyg_view{
     height: 100%;
-    overflow: scroll;
+    position: relative;
+    ul {
+        li {
+            margin: 5px;
+            background-color: #fff;
+            a {
+                display: flex;
+                .item_left{
+                    flex: 1;
+                    img{
+                        width: 80%;
+                        margin: 0 auto;
+                    }
+                }
+                .item_right{
+                    flex: 2;
+                    overflow: hidden;
+                    position: relative;
+                    padding-left: 10px;
+                    .fa {
+                        position: absolute;
+                        right: 10px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: #ccc;
+                        font-size: 22px;
+                    }
+                    .goods_name{
+                        font-size: 15px;
+                        height: 40px;
+                        line-height: 35px;
+                        color: #99999e;
+                        // overflow: hidden;
+                        // white-space: normal;
+                        // text-overflow: ellipsis; 
+                    }
+                    .goods_price{
+                        font-size: 15px;
+                        color: #f00;
+                        padding-top: 10px;
+                    }
+                } 
+            }
+        }
+    }
 }
