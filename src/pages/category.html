@@ -55,7 +55,7 @@
     <script type="text/template" id="left_tmpl">
         <ul>
             {{each arr value index}} {{if index == 0}}
-            <li class="active">{{value.cat_name}}</li>
+            <li data-index={{index}} class="active">{{value.cat_name}}</li>
             {{else if index != 0}}
             <li>{{value.cat_name}}</li>
             {{/if}} {{/each}}
