@@ -33,7 +33,7 @@
      <a href="#top" class="goTop iconfont icon-dingbu" id="goTop"></a>
     <!-- 底部部分 -->
     <footer class="pyg_footer">
-        <a href="index.html">
+        <a href="/index.html">
             <span class="fa fa-home"></span>
             <span class="link_name">首页</span>
         </a>
@@ -57,32 +57,30 @@
             {{each arr value index}} {{if index == 0}}
             <li data-index={{index}} class="active">{{value.cat_name}}</li>
             {{else if index != 0}}
-            <li>{{value.cat_name}}</li>
+            <li data-index={{index}}>{{value.cat_name}}</li>
             {{/if}} {{/each}}
         </ul>
     </script>
     <!-- 右边的模板 -->
     <script type="text/template" id="right_tmpl">    
-         {{each arr value index}}
-            {{each value.children value2}}
-                <div class="item_group">
-                        <div class="cat_name mui-clearfix">
-                           {{if index.length != 0}}
-                             <span class="c_tit">{{value2.cat_name}}</span>
-                           {{/if}}
-                            <span class="c_line"></span>
-                        </div>
-                        <div class="item_contents">
-                        {{each value2.children value3}}
-                            <a href="javascript:;">
-                                <img src="http://api.pyg.ak48.xyz/{{value3.cat_icon}}" alt="">
-                                <div class="cat_name2">{{value3.cat_name}}</div>
-                            </a>
-                        {{/each}}
-                        </div>
-                    </div>
-            {{/each}}
-         {{/each}}
+         <div class="box">
+            {{each arr value index}}
+            <div class="item_group">
+                <div class="cat_name mui-clearfix">
+                        <span class="c_tit">{{value.cat_name}}</span>
+                        <span class="c_line"></span>
+                </div>
+                <div class="item_contents">
+                {{each value.children value2 index2}}
+                    <a href="/pages/good_list.html?cid={{value2.cat_id}}">
+                        <img src="{{$imports.iconUrl}}{{value2.cat_icon}}" alt="">
+                        <div class="cat_name2">{{value2.cat_name}}</div>
+                    </a>
+                {{/each}}
+                </div>
+            </div>
+           {{/each}}
+         </box>
     </script>
 </body>
 <script src="/lib/arttemplate/template-web.js"></script>

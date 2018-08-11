@@ -33,7 +33,7 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  overflow: scroll;
+  overflow: hidden;
   font-size: .14rem;
   background-color: #fff;
 }
@@ -77,6 +77,6 @@ body {
 }
 
 .pyg_view .right .item_group .item_contents a img {
-  width: 70%;
+  width: 75%;
   margin: 0 auto;
 }

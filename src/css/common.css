@@ -27,6 +27,35 @@ a {
           box-sizing: border-box;
 }
 
+.wait::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  opacity: .1;
+  z-index: 99;
+}
+
+.wait::after {
+  content: "\f110";
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  margin-left: -35px;
+  -webkit-animation: fa-spin 2s infinite linear;
+          animation: fa-spin 2s infinite linear;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 50px;
+  color: orange;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  z-index: 100;
+}
+
 /* 头部 */
 .pyg_header {
   position: fixed;
@@ -50,6 +79,7 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #fff;
 }
 
 .pyg_footer a {

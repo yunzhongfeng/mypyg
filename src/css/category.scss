@@ -26,7 +26,7 @@
      }
      .right {
       flex: 1;
-      overflow: scroll;
+      overflow: hidden;
       font-size: .14rem;
       background-color: #fff;
       .item_group {
@@ -62,7 +62,7 @@
                  width: 33.33%;
                 //  box-shadow: 0 0 0px 1px aqua;
                  img {
-                     width: 70%;
+                     width: 75%;
                      margin: 0 auto;
 
                  }

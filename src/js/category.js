@@ -1,26 +1,51 @@
 $(function () {
+    //后台数据
+    var Datas;
+    //左侧的滚动条
+    var myScroll1;
     init();
     /* 页面加载就运行的代码 */
     function init() {
         setHTML();
-        getData();
+        eventList();
+        getCategories();
         
     }
-
+    // 绑定左侧菜单的点击事件,因为是动态生成的,所以要用委托
+    function eventList() {
+        $(".left").on("tap","li",function(){
+            var index = $(this).data("index");
+            $(this).addClass("active").siblings().removeClass("active");
+            myScroll1.scrollToElement(this);
+            renderRight(index);
+        })
+    }
     /* 获取分类数据 */
-    function getData(){
+    function getCategories(){
         $.get("categories",function(res){
             // console.log(res);
             var htmlStr = template("left_tmpl",{arr:res.data});
             $(".left").html(htmlStr);
-            var myScroll1 = new IScroll('.left');
-             console.log(res);
-            var rightStr = template("right_tmpl",{arr:res.data});
-            // console.log(rightStr);
-            $('.right').html(rightStr);
-           
-
+           myScroll1 = new IScroll('.left');
+            //  console.log(res);
+            Datas = res.data;
+            renderRight(0);
         },"json");
+    }
+    //根据索引来渲染右侧的数据
+    function renderRight(index) {
+      var arr = Datas[index].children;
+      var rightStr = template("right_tmpl",{arr:arr});
+      $('.right').html(rightStr);
+     // console.log(rightStr);
+    // 获取要渲染的图片的长度
+    var nums = $(".right img").length;
+    $(".right img").on("load",function () {
+         nums--;
+         if(nums==0){
+         new IScroll(".right");
+        } 
+    })
     }
    //获得当前html根元素的font-size,设置rem
     function setHTML() {
