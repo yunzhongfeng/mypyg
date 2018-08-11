@@ -10,13 +10,15 @@ $(function () {
     /* 获取分类数据 */
     function getData(){
         $.get("categories",function(res){
+            // console.log(res);
             var htmlStr = template("left_tmpl",{arr:res.data});
-            // console.log(htmlStr);
             $(".left").html(htmlStr);
             var myScroll1 = new IScroll('.left');
+             console.log(res);
             var rightStr = template("right_tmpl",{arr:res.data});
-            console.log(rightStr);
-            var myScroll2 = new IScroll('.right');
+            // console.log(rightStr);
+            $('.right').html(rightStr);
+           
 
         },"json");
     }
