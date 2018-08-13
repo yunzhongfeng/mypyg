@@ -5,29 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>商品列表--(购就完事了)</title>
+    <title>登录</title>
     <link rel="stylesheet" href="/lib/mui/css/mui.min.css">
     <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/common.css">
-    <link rel="stylesheet" href="/css/good_list.css">
+    <link rel="stylesheet" href="/css/login.css">
     <!-- icon图标 -->
     <link rel="shortcut icon" href="/favicon.ico">
 </head>
 
 <body>
-    <!-- 头部搜索框 -->
-    <div class="search_header"></div>
-    <!-- 商品检索部分 -->
-    <div class="pyg_bar">
-        <a href="javascript:;">综合</a>
-        <a href="javascript:;">销量</a>
-        <a href="javascript:;">促销</a>
-    </div>
+    <!-- 头部部分 -->
+    <header class="pyg_nav mui-bar mui-bar-nav">
+        <h1 class="mui-title">登录</h1>
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    </header>
     <!-- 主体部分 -->
     <div class="pyg_view">
-        <div class="view_content">
-            <ul>
-            </ul>
+        <div class="login_form">
+            <form class="mui-input-group">
+                <div class="mui-input-row">
+                    <label>手机</label>
+                <input type="text" name="mobile" value="13679820138" class="mui-input-clear"  placeholder="请输入用户名">
+                </div>
+                <div class="mui-input-row">
+                    <label>密码</label>
+                    <input type="password" name="pwd" class="mui-input-password" placeholder="请输入密码">
+                </div>
+            </form>
+        </div>
+        <div class="btn_tool">
+            <a id="btn_login" class="mui-btn mui-btn-primary">登录</a>
+            <a href="/pages/register.html"  class="mui-btn mui-btn-primary mui-btn-outlined">快速注册</a>
         </div>
     </div>
     <!-- 底部部分 -->
@@ -49,29 +58,11 @@
             <span class="link_name">我的</span>
         </a>
     </footer>
-    <!-- 模板引擎 -->
-     <script type="text/template" id="goods_tmpl">
-          {{each arr value index}}
-            <li>
-                <a href="/pages/goods_detail.html?goods_id={{value.goods_id}}">
-                    <div class="item_left">
-                        <img src="{{value.goods_small_logo}}" alt="图片破损">
-                    </div>
-                    <div class="item_right">
-                        <span class="fa fa-angle-right"></span>
-                        <div class="goods_name mui-ellipsis">{{value.goods_name}}</div>
-                        <div class="goods_price">¥ {{value.goods_price}}</div>
-                    </div>
-                </a>
-            </li>
-          {{/each}}
-     </script>  
-    <!-- 模板end -->
 </body>
 <script src="/lib/arttemplate/template-web.js"></script>
 <script src="/lib/zepto/zepto.js"></script>
 <script src="/lib/mui/js/mui.min.js"></script>
 <script src="/js/common.js"></script>
-<script src="/js/good_list.js"></script>
+<script src="/js/login.js"></script>
 
 </html>

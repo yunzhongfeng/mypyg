@@ -24,17 +24,17 @@ typora-copy-images-to: medias
 
 ​	可能需要用得到的网站
 
-| 名称         | 网址                                          | 备注               |
-| ------------ | --------------------------------------------- | ------------------ |
-| zepto        | http://www.css88.com/doc/zeptojs_api/         | zepto的中文api     |
-| art-template | http://aui.github.io/art-template/zh-cn/docs/ | 模版引擎           |
-| fontawesome  | http://fontawesome.dashgame.com/              | 字体图标           |
-| mui官网      | http://dev.dcloud.net.cn/mui/                 | 官方网站           |
-| hello-mui    | http://www.dcloud.io/hellomui/                | 在线案例           |
-| mui-辅助类   | http://www.mubrand.com/?post=19               | mui的辅助类        |
-| 品优购在线   | http://pyg.ak48.xyz/                          | 上课参照的案例     |
-| 上课源代码   | https://gitee.com/ukSir/gz20-pyg.git          | 上课的源代码的地址 |
-| api接口文档  | [api.md](api.md)                              |                    |
+| 名称         | 网址                                                     | 备注               |
+| ------------ | -------------------------------------------------------- | ------------------ |
+| zepto        | http://www.css88.com/doc/zeptojs_api/                    | zepto的中文api     |
+| art-template | https://aui.github.io/art-template/zh-cn/docs/index.html | 模版引擎           |
+| fontawesome  | http://fontawesome.dashgame.com/                         | 字体图标           |
+| mui官网      | http://dev.dcloud.net.cn/mui/                            | 官方网站           |
+| hello-mui    | http://www.dcloud.io/hellomui/                           | 在线案例           |
+| mui-辅助类   | http://www.mubrand.com/?post=19                          | mui的辅助类        |
+| 品优购在线   | http://pyg.ak48.xyz/                                     | 上课参照的案例     |
+| 上课源代码   | https://gitee.com/ukSir/gz20-pyg.git                     | 上课的源代码的地址 |
+| api接口文档  | [api.md](api.md)                                         |                    |
 
 
 
@@ -70,6 +70,132 @@ gallery.slider({
   interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
 });
 ```
+
+## mui上拉刷新下拉加载
+
+### HTML
+
+```html
+//  lt_view 为下拉-上拉的容器  里面必须加一层嵌套 div   
+<div class="lt_view">
+    //2 div 为额外添加的嵌套
+    <div>
+      //3 .lt_content 为存放数据的容器
+        <div class="lt_content">
+        数据
+        </div>
+    </div>
+  </div>
+```
+
+### 初始化javascript
+
+```javascript
+  mui.init({
+  pullRefresh: {
+    container: "容器选择器",
+    down: {
+      auto: true,
+      //  触发下拉刷新时自动触发
+      callback: function () {
+      }
+    },
+    up:{
+      //  触发上拉刷新时自动触发
+      callback:function () {
+      }
+    }
+  }
+});
+  
+```
+
+### api
+
+```javascript
+// 结束下拉刷新
+mui('.lt_view').pullRefresh().endPulldownToRefresh();
+
+// 结束上拉加载更多 如果没有数据 传入 true 否则 传入 false
+mui('.lt_view').pullRefresh().endPullupToRefresh();
+
+// 重置 组件
+mui('.lt_view').pullRefresh().refresh(true);
+```
+
+## zepto
+
+### 设置拦截器
+
+​	 `beforeSend`会在发送请求之前被调用
+
+```javascript
+  $.ajaxSettings.beforeSend = function (xhr, obj) {
+    obj.url = baseUrl  + obj.url;
+  }
+```
+
+### 扩展zepto
+
+​	为**$**对象增加自定义方法 如 可以这样使用 `$.show();`
+
+```javascript
+  $.extend($, {
+    show: function () {
+      $("body").addClass("waitting");
+    }
+  });
+```
+
+## art-template
+
+​	设置变量,让 自定义变量在模板中可以使用
+
+### javascript
+
+```javascript
+  template.defaults.imports.iconUrl = "www.baidu.com";
+```
+
+### HTML
+
+​	在模板中调用
+
+```html
+<div>{{iconUrl}}</div>
+```
+
+# 常用工具函数
+
+## 设置rem
+
+```javascript
+  function setHTML() {
+    // 基础值
+    var baseVal = 100;
+    // 设计稿的宽度
+    var pageWidth = 375;
+    // 要适配的屏幕的宽度?
+    var screenWidth = document.querySelector("html").offsetWidth;
+    // 要设置的fontsize
+    var fontsize = screenWidth * baseVal / pageWidth;
+    // 设置到html标签的中
+    document.querySelector("html").style.fontSize = fontsize + "px";
+  }
+```
+
+## 获取url中的参数
+
+```javascript
+    getUrl: function (name) {
+      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      var r = window.location.search.substr(1).match(reg);
+      if (r != null) return decodeURI(r[2]);
+      return null;
+    },
+```
+
+
 
 # 页面分析
 

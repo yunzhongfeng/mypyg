@@ -2,7 +2,7 @@ $(function(){
     //获得查询参数
     var QueryObj = {
         query : "",
-        cid : getValue("cid"),
+        cid : $.getUrlValue("cid"),
         pagenum: 1,
         pagesize: 6
     }
@@ -11,6 +11,7 @@ $(function(){
 
     init();
     function init(){
+        eventList();
         mui.init({
             pullRefresh: {
               container: ".pyg_view",
@@ -56,12 +57,13 @@ $(function(){
              }
           });
     }
-    // 根据url上的key来获取值
-    function getValue(name) {
-      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
-      var r = window.location.search.substr(1).match(reg);
-      if (r != null) return decodeURI(r[2]);
-      return null;
+    //给内容中的a标签绑定tap事件,因为mui阻止了a标签的默认跳转行为
+    function eventList(){
+        //动态生成的,用事件委托
+       $(".pyg_view").on("tap","a",function(){
+           var href = this.href;
+          location.href = href;
+       })
     }
     // 获取列表数据
     function search(callback){

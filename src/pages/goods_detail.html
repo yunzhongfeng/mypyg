@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="/lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="/lib/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/goods_detail.css">
+    <!-- icon图标 -->
+    <link rel="shortcut icon" href="/favicon.ico">
+</head>
+
+<body>
+    <!-- 头部部分 -->
+    <header class="pyg_nav mui-bar mui-bar-nav">
+        <h1 class="mui-title">商品详情</h1>
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+    </header>
+    <!-- 主体部分 -->
+    <div class="pyg_view">
+    
+    </div>  
+    </div>
+    <!-- 底部工具栏-->
+    <footer class="gd_footer">
+        <a href="javascript:;">
+            <span class="fa fa-weixin"></span>
+            <span>客服</span>
+        </a>
+        <a href="javascript:;">
+            <span class="fa fa-qq"></span>
+            <span>客服</span>
+        </a>
+        <a href="javascript:;" class="goods_buy">立即购买</a>
+        <a href="javascript:;" class="goods_add">加入购物车</a>
+    </footer>
+   <!-- 模板引擎 -->
+   <script type="text/template" id="goods_tmpl">
+         <!-- 轮播图 -->
+         <div class="slides">
+            <div class="mui-slider">
+                 <div class="mui-slider-group mui-slider-loop">
+                  <!--支持循环，需要重复图片节点-->
+                  <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data.pics[data.pics.length-1].pics_mid_url}}" /></a></div>
+                  {{each data.pics value index}}
+                    <div class="mui-slider-item"><a href="#"><img src="{{value.pics_mid_url}}" /></a></div>
+                  {{/each}}
+                  <!--支持循环，需要重复图片节点-->
+                  <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="{{data.pics[0].pics_mid_url}}" /></a></div>
+                 </div>
+                 <div class="mui-slider-indicator">
+                     {{each data.pics value index}}
+                       {{if index ==0}}
+                       <div class="mui-indicator mui-active"></div>
+                       {{else if index !=0}}
+                        <div class="mui-indicator"></div>
+                       {{/if}}
+                     {{/each}} 
+                 </div>
+            </div>
+         </div>
+       <!-- 轮播图end -->
+    <div class="pyg_goods">
+       <!-- 商品名称 -->
+       <div class="goods_name">{{data.goods_name}}</div>
+       <!-- 商品名称end -->
+       <!-- 商品价格 -->
+       <div class="goods_price">￥{{data.goods_price}}</div>
+       <!-- 商品价格end -->
+       <!-- 配送 -->
+       <div class="goods_send">
+           <ul>
+               <li>
+                   <span>已选</span>
+                   <span>白色</span>
+               </li>
+               <li>
+                   <span>促销</span>
+                   <span>是</span>
+               </li>
+               <li>
+                   <span>送至</span>
+                   <span>广州</span>
+               </li>
+               <li>
+                   <span>运费</span>
+                   <span>免运费</span>
+               </li>
+           </ul>
+       </div>
+       <!-- 配送end -->
+       <!-- 商品详情 -->
+       <div class="goods_des">
+           <!-- 标题 -->
+         <div id="segmentedControl" class="mui-segmented-control">
+             <a class="mui-control-item mui-active" href="#item1">图文详情</a>
+             <a class="mui-control-item" href="#item2">规格参数</a>
+         </div>
+         <!-- 标题end -->
+         <!-- 内容 -->
+         <div id="item1" class="mui-control-content mui-active">          
+              {{@ data.goods_introduce}}     
+        </div> 
+         <div id="item2" class="mui-control-content">   
+             <ul>
+                 {{each data.attrs value index}}
+                    <li>
+                        <div class="gd_title">{{value.attr_name.split("-")[0]}}</div>
+                        <div class="gd_content">
+                            <span>{{value.attr_name.split("-")[1]}}</span>
+                            <span>{{value.attr_value}}</span>
+                        </div>
+                    </li>
+                 {{/each}}
+             </ul>      
+        </div> 
+         <!-- 内容end -->
+      </div>
+       <!-- 商品详情end -->
+    </div>   
+   </script>     
+   <!-- 模板引擎end -->
+</body>
+<script src="/lib/arttemplate/template-web.js"></script>
+<script src="/lib/zepto/zepto.js"></script>
+<script src="/lib/mui/js/mui.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="/js/goods_detail.js"></script>
+
+</html>

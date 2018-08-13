@@ -37,6 +37,7 @@ body {
     ul {
         li {
             margin: 5px;
+            padding: 20px 0;
             background-color: #fff;
             a {
                 display: flex;
@@ -51,7 +52,7 @@ body {
                     flex: 2;
                     overflow: hidden;
                     position: relative;
-                    padding-left: 10px;
+                    padding-left: 15px;
                     .fa {
                         position: absolute;
                         right: 10px;
@@ -61,7 +62,7 @@ body {
                         font-size: 22px;
                     }
                     .goods_name{
-                        font-size: 15px;
+                        font-size: 16px;
                         height: 40px;
                         line-height: 35px;
                         color: #99999e;

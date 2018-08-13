@@ -1,0 +1,27 @@
+ /* 头部导航栏部分 */
+ .pyg_nav {
+     
+ }
+ /* 注册主体 */
+ .pyg_view {
+     padding: 10px;
+     #valida_code {
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: auto;
+     }
+     .reg_form {
+         input {
+             font-size: 15px;
+         }
+         .btn_tool {
+             display: flex;
+             padding: 10px 0;
+             >button {
+                 flex: 1;
+                 padding: 10px 0;
+             }
+         }
+     }
+ }

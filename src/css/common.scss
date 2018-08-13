@@ -19,6 +19,9 @@ a {
     margin: 0;
     box-sizing: border-box;
 }
+.mui-icon {
+    color: #007aff;
+}   
 // 自己实现正在等待图标class
 .wait {
     //遮罩层
@@ -30,7 +33,7 @@ a {
        width: 100%;
        height: 100%;
        background-color: #ccc;
-       opacity: .1;
+       opacity: .2;
        z-index: 99; 
    }  
    //图标

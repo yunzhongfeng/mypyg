@@ -27,6 +27,45 @@ $(function () {
         // console.log("最后的ajaxNum="+ajaxNum);
       } $('body').removeClass('wait');   
   }
+  $.extend($,{
+        // 根据url上的key来获取值
+        getUrlValue: function(name) {
+          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+          var r = window.location.search.substr(1).match(reg);
+          if (r != null) return decodeURI(r[2]);
+          return null;
+        },
+        //手机号验证
+        checkPhone:function (phone) {
+          if (!(/^1[34578]\d{9}$/.test(phone))) {
+              return false;
+          } else {
+              return true;
+          }
+      },
+      //邮箱验证
+      checkEmail:function(myemail) {　　
+        var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+        if (myReg.test(myemail)) {　　　　
+            return true;　　
+        } else {　　　　
+            return false;
+        }
+     },
+     //密码
+     checkPassword:function(pwd) {
+       var myPwd = /^[a-zA-Z]\w{5,17}$/;
+       if(myPwd.test(pwd)) {
+         return true;
+       }else {
+         return false;
+       }
+     }
+  });
+
+
+
+
 
   function myNewScroll() {
     var goTop = document.getElementById('goTop');

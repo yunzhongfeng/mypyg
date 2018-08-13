@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* 头部导航栏部分 */
+/* 注册主体 */
+.pyg_view {
+  padding: 10px;
+}
+
+.pyg_view #valida_code {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+}
+
+.pyg_view .reg_form input {
+  font-size: 15px;
+}
+
+.pyg_view .reg_form .btn_tool {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+}
+
+.pyg_view .reg_form .btn_tool > button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10px 0;
+}

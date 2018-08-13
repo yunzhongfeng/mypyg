@@ -27,6 +27,10 @@ a {
           box-sizing: border-box;
 }
 
+.mui-icon {
+  color: #007aff;
+}
+
 .wait::before {
   content: "";
   position: fixed;
@@ -35,7 +39,7 @@ a {
   width: 100%;
   height: 100%;
   background-color: #ccc;
-  opacity: .1;
+  opacity: .2;
   z-index: 99;
 }
 
