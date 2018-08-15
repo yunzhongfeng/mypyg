@@ -195,6 +195,31 @@ mui('.lt_view').pullRefresh().refresh(true);
     },
 ```
 
+## 验证手机号码
+
+```javascript
+function checkPhone(phone) {
+    if (!(/^1[34578]\d{9}$/.test(phone))) {
+        return false;
+    } else {
+        return true;
+    }
+}
+```
+
+## 验证码邮箱
+
+```javascript
+function checkEmail(myemail) {　　
+    var myReg = /^[a-zA-Z0-9_-]+@([a-zA-Z0-9]+\.)+(com|cn|net|org)$/;
+    if (myReg.test(myemail)) {　　　　
+        return true;　　
+    } else {　　　　
+        return false;
+    }
+}
+```
+
 
 
 # 页面分析

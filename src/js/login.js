@@ -28,11 +28,20 @@ $(function(){
                   password:pwd_txt
                 },function(res){
                     if(res.meta.status==200){
-                        //提示登录成功
-                        mui.toast(res.meta.msg);
-                        setTimeout(() => {
-                            location.href ="/index.html";
-                        }, 1000);
+                            //提示登录成功
+                            mui.toast(res.meta.msg);
+                            // debugger;
+                            //把用户信息存储到永久存储中去 localStorage 永久存储 sessionStorage  会话存储
+                            localStorage.setItem("userinfo",JSON.stringify(res.data));
+                            //判断有没有来源页面,没有再跳转到首页中去
+                            var pageUrl = sessionStorage.getItem("pageUrl");
+                            if(pageUrl){
+                                location.href = pageUrl;
+                            }else{
+                                setTimeout(() => {
+                                    location.href ="/index.html";
+                                }, 1000);
+                            }
                     }else {
                         mui.toast(res.meta.msg);
                     }

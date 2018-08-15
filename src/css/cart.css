@@ -1,0 +1,209 @@
+@charset "UTF-8";
+#delete_btn {
+  display: none;
+}
+
+.pyg_view {
+  padding: 50px 10px;
+  /* 购物车 */
+}
+
+.pyg_view .address .addr_title {
+  font-size: 14px;
+  color: #666;
+}
+
+.pyg_view .address .addr_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  padding: 10px 0;
+  position: relative;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+
+.pyg_view .address .addr_content .fa-angle-right {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 20px;
+  color: #ccc;
+}
+
+.pyg_view .address .addr_content .fa-map-marker {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 20px;
+  color: #f12015;
+}
+
+.pyg_view .address .addr_content .addr_des {
+  -webkit-box-flex: 8;
+      -ms-flex: 8;
+          flex: 8;
+}
+
+.pyg_view .address .addr_content .addr_des .ad_con {
+  color: #666;
+  font-size: 14px;
+}
+
+.pyg_view .order {
+  margin-top: 30px;
+}
+
+.pyg_view .order .order_title {
+  font-size: 14px;
+  color: #666;
+}
+
+.pyg_view .order .order_content {
+  padding: 10px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  position: relative;
+}
+
+.pyg_view .order .order_content .fa-angle-right {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 20px;
+  color: #ccc;
+}
+
+.pyg_view .order .order_content a {
+  padding-right: 10px;
+}
+
+.pyg_view .pyg_cart {
+  margin-top: 40px;
+}
+
+.pyg_view .pyg_cart .p_cart_tit {
+  font-size: 14px;
+  color: #666;
+}
+
+.pyg_view .pyg_cart .p_cart_con {
+  background-color: #fff;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px 0;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li .goods_chk {
+  -webkit-box-flex: .5;
+      -ms-flex: .5;
+          flex: .5;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li .goods_chk input {
+  position: static;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li .goods_img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li .goods_tool {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li .goods_tool .goods_name {
+  color: #666;
+  font-size: 14px;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal !important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li .goods_tool .goods_nums {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li .goods_tool .goods_nums .g_price {
+  padding-top: 10px;
+}
+
+.pyg_view .pyg_cart .p_cart_con ul li .goods_tool .goods_nums .mui-numbox {
+  display: none;
+}
+
+#pyg_body.edit_status #delete_btn {
+  display: block;
+}
+
+#pyg_body.edit_status .goods_chk {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#pyg_body.edit_status .mui-numbox {
+  display: block;
+}

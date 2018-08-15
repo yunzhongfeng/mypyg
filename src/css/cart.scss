@@ -1,0 +1,144 @@
+@mixin rightFont() {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px; 
+    color: #ccc;
+}
+//第几行显示省略小点
+@mixin ellipse($num) {
+    display: -webkit-box;
+    overflow: hidden;
+    white-space: normal!important;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    -webkit-line-clamp: $num;
+    -webkit-box-orient: vertical;
+}
+  #delete_btn {
+      display: none;
+  }  
+// 主体部分
+.pyg_view {
+    padding: 50px 10px;
+    .address{ 
+        .addr_title{
+            font-size: 14px;
+            color: #666;
+        }
+        .addr_content{
+            display: flex;
+            background-color: #fff;
+            padding: 10px 0;
+            position: relative;
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            .fa-angle-right {
+               @include rightFont();
+              }
+            .fa-map-marker{
+                flex: 1;
+                display: flex;   
+                justify-content: center;
+                align-items: center;
+                font-size: 20px;
+                color: #f12015;
+              }
+            .addr_des{
+                flex: 8;
+                .ad_tit{} 
+                .ad_con{
+                    color: #666;
+                    font-size: 14px;
+                }
+            } 
+        }
+    }
+    .order{ 
+        margin-top: 30px; 
+        .order_title{
+            font-size: 14px;
+            color: #666;
+        }
+        .order_content{
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            position: relative; 
+            .fa-angle-right {
+                @include rightFont();
+            }
+            a {
+                padding-right: 10px;
+            }
+        }
+    }
+    /* 购物车 */
+    .pyg_cart {
+      margin-top: 40px;
+       .p_cart_tit {
+        font-size: 14px;
+        color: #666;
+       } 
+       .p_cart_con{
+           background-color: #fff;
+           ul {
+               li{
+                   display: flex;
+                   padding: 10px 0;
+                  .goods_chk{
+                      flex: .5;
+                      display: none;
+                      justify-content: center;
+                      align-items: center;
+                      input {
+                          position: static;
+                      }
+                  }  
+                  .goods_img{
+                      flex: 1;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                  }
+                  .goods_tool{
+                      flex: 3;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-between;
+                      .goods_name{
+                          color: #666;
+                          font-size: 14px;
+                          @include ellipse(2);
+                      }
+                      .goods_nums{
+                          padding: 10px 0;
+                          display: flex;
+                          .g_price{
+                              padding-top: 10px;
+                          }
+                          .mui-numbox {
+                              display: none;
+                          }
+                      }
+                  }
+               }
+           }
+       }
+    }
+}
+#pyg_body.edit_status {
+    #delete_btn{
+        display: block;
+    }
+    .goods_chk {
+        display: flex;
+    }
+    .mui-numbox {
+        display: block;
+    } 
+}

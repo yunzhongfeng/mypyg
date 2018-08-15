@@ -360,7 +360,7 @@
 ```javascript
 {
 	{
-    "info": "{\"goods_id\":43986,\"cat_id\":5,\"goods_name\":\"海信(Hisense)LED55MU9600X3DUC 55英寸 4K超高清量子点电视 ULED画质 VIDAA系统\",\"goods_price\":13999,\"goods_number\":100,\"goods_weight\":100}\""
+   info: {"cat_id":1358,"goods_id":20383,"goods_name":"苹果（Apple）原装耳机iphone6s/5/ SE /Plus/ipad4air带麦克风线控耳塞入耳式","goods_number":100,"goods_price":68,"goods_weight":100,"goods_small_logo":"http://image3.suning.cn/uimg/b2c/newcatentries/0070130691-000000000141900496_1_400x400.jpg"}
 	}
 }
 ```

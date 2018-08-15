@@ -44,7 +44,7 @@
         <a href="/pages/category.html">
             <span class="fa fa-list-ul"></span><span class="link_name">分类</span>  
         </a>
-        <a href="javascript:;">
+        <a href="/pages/cart.html">
              <span class="fa fa-shopping-cart"></span><span class="link_name">购物车</span>
         </a>
         <a href="javascript:;">
@@ -90,14 +90,14 @@
                 {{each value.goods value2}}
                     <li>
                         <!-- 商品链接 -->
-                        <a href="javascript:;" class="item_des">
+                        <a href="/pages/goods_detail.html?goods_id={{value2.goods_id}}" class="item_des">
                             <img src="{{value2.goods_small_logo}}" alt="">
                             <div class="goods_name">{{value2.goods_name}}</div>
                             <div class="goods_price">￥{{value2.goods_price}}</div>
                         </a>
                         <!-- 找相似 -->
                         <div class="item_like">
-                            <a href="javascript:;" class=" mui-btn mui-btn-primary mui-btn-outlined">找相似</a>
+                            <a href="/pages/goods_detail.html?goods_id={{value2.goods_id}}" class=" mui-btn mui-btn-primary mui-btn-outlined">找相似</a>
                         </div>
                     </li>
                 {{/each}}
