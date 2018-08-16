@@ -11,8 +11,26 @@ $(function () {
             $("body").fadeIn();
         }
         getUserInfo();
+        eventList();
     }
 
+    //事件函数
+    function eventList(){
+        //退出
+        $("#loginOutBtn").on("tap",function () {
+            mui.confirm("是否要退出登录?","提示",["确定","取消"],function(etype){
+                if(etype.index == 0){
+                    //0 为确定
+                    $.removeUser();
+                    $.setPage();
+                    location.href = "/pages/login.html";
+                }else if(etype.index == 1){
+                    //1 为取消 不用跳转
+                }
+            })
+        
+        })
+    }
     //获得用户信息
     function getUserInfo(){
         $.ajax({

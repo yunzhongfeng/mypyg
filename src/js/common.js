@@ -90,6 +90,10 @@ $(function () {
      //把用户信息从永久存储中取出来
      getUser: function(){
       localStorage.getItem("userinfo")? JSON.parse(localStorage.getItem("userinfo")):{};
+     },
+     //删除永久存储中的userinfo数据
+     removeUser: function(){
+      localStorage.removeItem("userinfo");
      }
 
   });
