@@ -32,9 +32,9 @@ $(function(){
                             mui.toast(res.meta.msg);
                             // debugger;
                             //把用户信息存储到永久存储中去 localStorage 永久存储 sessionStorage  会话存储
-                            localStorage.setItem("userinfo",JSON.stringify(res.data));
+                            $.setUser(res.data);
                             //判断有没有来源页面,没有再跳转到首页中去
-                            var pageUrl = sessionStorage.getItem("pageUrl");
+                            var pageUrl = $.getPage();
                             if(pageUrl){
                                 location.href = pageUrl;
                             }else{

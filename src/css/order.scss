@@ -1,0 +1,31 @@
+ body {
+     display: none;
+ }
+ #segmentedControl {
+     background-color: #fff;
+ }
+ 
+  #item1 {
+     padding: 20px;
+     ul {
+         padding: 10px;
+         li {
+             padding: 10px 0;
+             display: flex;
+             border-bottom: 1px solid #ccc;
+             .ord_li{
+                 flex: 3;
+                 overflow: hidden;
+                 .order_num{}
+                 .order_num_content{
+                     display: block;
+                 }
+             }
+             .ord_price{
+                 flex: 1;
+                 color: #f00;
+                 text-align: center;
+             }
+         }
+     }
+ }

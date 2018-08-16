@@ -74,7 +74,24 @@ $(function () {
          token = JSON.parse(localStorage.getItem("userinfo")).token;
        }
        return token;
+     },
+     //把当前页面中的URL路径存储到会话存储中
+     setPage: function() {
+       return sessionStorage.setItem("pageUrl",location.href);
+     },
+     //把页面中的URL路径会话存储中取出来
+     getPage: function(){
+       return sessionStorage.getItem("pageUrl");
+     },
+     //把用户信息存储到永久存储中
+     setUser: function(obj) {
+      localStorage.setItem("userinfo",JSON.stringify(obj));
+     },
+     //把用户信息从永久存储中取出来
+     getUser: function(){
+      localStorage.getItem("userinfo")? JSON.parse(localStorage.getItem("userinfo")):{};
      }
+
   });
 
 

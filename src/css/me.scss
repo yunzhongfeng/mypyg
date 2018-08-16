@@ -1,0 +1,61 @@
+ body {
+     display: none;
+ }
+ .pyg_view {
+    padding: 20px 10px 15px;
+    overflow: scroll;
+    height: 100%;
+     .pyg_userinfo {
+         background-color: #fff;
+         padding: 10px;
+         border: 1px solid #ccc;
+         display: flex;
+         .mui-icon-contact{
+             flex: 1;
+             color: #000;
+             font-size: 40px;
+         }
+         .user_wrap{
+             flex: 4;
+             .user_name {}
+             .user_email{
+                 font-size: 14px;
+                 color: #666;
+             }
+         }
+     }
+     .pyg_order {
+         margin-top: 10px;
+         background-color: #fff;
+         border: 1px solid #ccc;
+         .order_title{
+             padding: 10px;
+             border-bottom: 1px solid #ccc;
+         }
+         .order_content{
+             padding: 10px 0;
+             display: flex;
+             text-align: center;
+             a {
+                 color: #007aff;
+                 flex: 1; 
+                 p {
+                    color: #007aff;
+                     margin-bottom: 0;
+                 }
+
+             }
+         }
+     }
+     .pyg_myPwd {
+         margin-top: 15px;
+     }
+     .pyg_contack {
+         margin-top: 15px;
+         li:first-child .mui-pull-right {
+              font-size: 15px;
+              color: #000;
+              font-weight: 600;
+         }
+     }
+ }

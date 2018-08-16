@@ -14,7 +14,7 @@ $(function () {
                     //提示未登陆
                     mui.toast("未登陆");
                     //回话存储当前路径
-                    sessionStorage.setItem("pageUrl",location.href);
+                    $.setPage();
                     // debugger;
                     setTimeout(() => {
                         location.href = "/pages/login.html";
@@ -46,7 +46,7 @@ $(function () {
                             //提示未登陆
                             mui.toast("未登陆");
                             //回话存储当前路径
-                            sessionStorage.setItem("pageUrl",location.href);
+                            $.setPage();
                             // debugger;
                             setTimeout(() => {
                                 location.href = "/pages/login.html";

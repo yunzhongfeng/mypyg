@@ -1,0 +1,42 @@
+body {
+  display: none;
+}
+
+#segmentedControl {
+  background-color: #fff;
+}
+
+#item1 {
+  padding: 20px;
+}
+
+#item1 ul {
+  padding: 10px;
+}
+
+#item1 ul li {
+  padding: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+#item1 ul li .ord_li {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  overflow: hidden;
+}
+
+#item1 ul li .ord_li .order_num_content {
+  display: block;
+}
+
+#item1 ul li .ord_price {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: #f00;
+  text-align: center;
+}
